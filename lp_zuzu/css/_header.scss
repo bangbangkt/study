@@ -1,0 +1,40 @@
+
+.header{
+  display: flex;
+  padding: 30px 0px;
+  align-items: center;
+
+  &__logo{
+    width: 100px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary;
+  }
+
+  &__menu{
+    display: flex;
+    align-items: center;
+    &--item{
+     
+      cursor: pointer;
+      width: 80px;
+      &:hover{
+        color: $color-gold;
+        text-decoration: none;
+      }
+    }
+    &--item:not(:first-child){
+        margin-left: 40px;
+    }
+   
+    
+  }
+
+  &__authur{
+    margin-left: auto ;
+    display: flex;
+    align-items: center;
+  }
+}
