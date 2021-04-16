@@ -35,3 +35,44 @@ li{
   list-style: none;
 }
 
+.txt1{
+  font-size: 60px;
+}
+.txt2{
+  font-size:40px;
+}
+.txt3{
+  font-size: 30px;
+}
+.txt4{
+  font-size: 24px;
+}
+.txt5{
+  font-size: 20px;
+}
+.txt6{
+  font-size:16px;
+}
+
+@mixin after-right {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+@mixin before-left {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}

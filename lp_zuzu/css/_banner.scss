@@ -1,10 +1,11 @@
 .banner{
+  padding: 40px;
   display: flex;
   align-items: center;
   &__info{
     width: 45%;
     &--title{
-      font-size: 60px;
+      
       font-weight: bold;
   
       span{

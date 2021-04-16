@@ -41,6 +41,30 @@ li {
   list-style: none;
 }
 
+.txt1 {
+  font-size: 60px;
+}
+
+.txt2 {
+  font-size: 40px;
+}
+
+.txt3 {
+  font-size: 30px;
+}
+
+.txt4 {
+  font-size: 24px;
+}
+
+.txt5 {
+  font-size: 20px;
+}
+
+.txt6 {
+  font-size: 16px;
+}
+
 .cta {
   padding: 15px 50px;
   display: inline-block;
@@ -124,6 +148,7 @@ li {
 }
 
 .banner {
+  padding: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,7 +162,6 @@ li {
 }
 
 .banner__info--title {
-  font-size: 60px;
   font-weight: bold;
 }
 
@@ -168,8 +192,8 @@ li {
   width: 100%;
 }
 
-.cap {
-  padding-top: 140px;
+.caps {
+  padding-top: 100px;
   padding-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -183,40 +207,81 @@ li {
   text-align: center;
 }
 
-.cap__box--desc {
+.caps__box--desc {
   position: relative;
 }
 
-.cap__box--desc::after {
+.caps__box--desc::after {
   content: "";
   width: 20px;
   height: 2px;
   background: #000;
   position: absolute;
-  right: 20px;
+  right: 0px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-.cap__box--desc::before {
+.caps__box--desc::before {
   content: "";
   width: 20px;
   height: 2px;
   background: #000;
   position: absolute;
-  left: 20px;
+  left: 0px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-.cap__box--title {
+.caps__box--title {
   font-size: 40px;
   font-weight: bold;
 }
 
-.cap__box span {
+.caps__box span {
   display: block;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cards__box {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f3f3f3;
+  border: 1px solid #e5e5e5;
+  width: calc(33% - 20px);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.cards__box--img {
+  width: 120px;
+  height: 120px;
+}
+
+.cards__box--title {
+  padding-top: 20px;
+  font-weight: bold;
+  height: 100px;
+}
+
+.cards__box--desc {
+  padding: 30px 40px;
+  height: 150px;
 }
 /*# sourceMappingURL=style.css.map */
