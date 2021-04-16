@@ -1,0 +1,44 @@
+.cap{
+  padding-top: 140px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  &__box{
+    &--desc{
+      position: relative;
+      &::after{
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+      }
+      &::before{
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
+      }
+    }
+
+    &--title{
+      font-size: 40px;
+      font-weight: bold;
+    }
+    span{
+      display: block;
+    }
+
+  }
+}
