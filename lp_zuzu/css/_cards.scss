@@ -1,0 +1,38 @@
+.cards{
+  
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  align-items: top;
+  width: 100%;
+  justify-content: space-between;
+  &__box{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f3f3f3;
+    border: 1px solid #e5e5e5;
+    width: calc(33% - 20px);
+    text-align: center;
+    border-radius: 10px;
+    &--img{
+
+      width: 120px;
+      height: 120px;
+    }
+
+    &--title{
+      padding-top: 20px;
+      font-weight: bold;
+      height: 100px;
+
+    }
+
+    &--desc{
+      padding: 30px 40px ;
+      height: 150px;
+
+    }
+    
+  }
+
+}
