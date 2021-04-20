@@ -65,6 +65,10 @@ li {
   font-size: 16px;
 }
 
+.h100 {
+  height: 100px;
+}
+
 .cta {
   padding: 15px 50px;
   display: inline-block;
@@ -281,12 +285,15 @@ li {
 .cards__box--title {
   padding-top: 20px;
   font-weight: bold;
-  height: 100px;
 }
 
 .cards__box--desc {
   padding: 30px 40px;
   height: 150px;
+}
+
+.cards__box hr {
+  width: 80%;
 }
 
 .info {
