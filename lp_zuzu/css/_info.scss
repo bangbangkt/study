@@ -1,0 +1,36 @@
+.info{
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  &__content{
+    width: 40%;
+    &--span{
+      position: relative;
+      padding-left: 40px;
+      &::before{
+        
+        @include before-left;
+      }
+    }
+
+    &--title{
+      font-size: 40px;
+      font-weight: bold;
+    }
+    span{
+      display: block;
+    }
+    &--desc{
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+    }
+  }
+  &__img{
+    width: 50%;
+
+    &--item{
+      width: 100%;
+    }
+  }
+}
