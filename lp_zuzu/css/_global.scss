@@ -53,8 +53,10 @@ li{
 .txt6{
   font-size:16px;
 }
-
-@mixin after-right {
+.h100{
+  height:100px ;
+}
+@mixin after-right{
   content: "";
   width: 20px;
   height: 2px;

@@ -1,0 +1,63 @@
+.features{
+  
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  &__content{
+    width: calc(33% - 20px);
+    padding: 20px 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    position: relative;
+    height: 660px;
+
+    &--title{
+      padding-top: 20px;
+    }
+    &--date{
+      padding-top: 20px;
+    }
+    &--desc{
+      padding-top: 20px;
+     
+    }
+    &--item{
+      padding-top: 20px;
+      
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      img{
+        width: 20px;
+        height: 20px;
+      }
+      span{
+        padding-left: 20px;
+      }
+    }
+
+    &--link{
+      padding-top: 30px;
+      padding-bottom: 10px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+  }
+  
+
+}
+// .feat--befo{
+//     ::after{
+//       content: "";
+//       width: 100px;
+//       height: 30px;
+//       background-image: url("../images/zuzu_12.png");
+//       background-size: 100% 100%;
+//       background-repeat: no-repeat;
+//     }
+//   }

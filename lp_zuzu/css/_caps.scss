@@ -1,13 +1,17 @@
 .caps{
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center; 
   text-align: center;
   &__box{
-    &--desc{
+    &--span{
       position: relative;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin: 0 auto;
+      width: 180px;
       &::after{
         @include after-right;
       }
