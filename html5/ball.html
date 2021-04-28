@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ball</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="400" height="300" style="border:1px solid #e5e5e5;"></canvas>
+</body>
+<script>
+  
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var r = 10;
+  var x = 20 , y = 20;
+  var dx = 2 , dy = 2;
+
+
+  // function vẽ bóng 
+  function drawBall (){
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, 2*Math.PI, true);
+
+    ctx.fillStyle="red";
+    ctx.strokeStyle="red";
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath()
+  }
+  function handlBallRun() {
+      if(  x < r || x > cx ){
+        dx = -dx;
+      }
+      if(  y < r || y > cy ){
+        dy = -dy;
+      }
+    }
+    function updatePosition() {
+      x += dx;
+      y += dy;
+    }
+//function bóng chuyển động theo thời gian
+  // setInterval(() => {
+  //   //xóa vị trí cũ khi bóng chuyển động
+  //   ctx.clearRect(0, 0 , c.width, c.height);
+  //   //vẽ bóng
+  //   drawBall();
+  //   // vị trí mới của bóng
+  //   if (x < 390 && y < 290) {
+  //     x += 2;
+  //     y +=2;
+  //   }
+  // } , 100);
+
+  //cach 2 dùng requestAnimationFrame()
+    var cx = c.width - r;
+    var cy = c.height - r;
+    function draw(){
+      ctx.clearRect(0, 0 , c.width, c.height);
+
+      drawBall();
+
+      handlBallRun();
+
+      updatePosition();
+
+      requestAnimationFrame(draw );
+    }
+    draw();
+    
+    
+  
+  
+</script>
+</html>
