@@ -7,21 +7,50 @@
   <title>Ball</title>
 </head>
 <body>
-  <canvas id="myCanvas" width="400" height="300" style="border:1px solid #e5e5e5;"></canvas>
+  <canvas id="myCanvas" width="500" height="500" style="border:1px solid #e5e5e5;"></canvas>
 </body>
 <script>
   
-  var c = document.getElementById("myCanvas");
-  var ctx = c.getContext("2d");
-  var r = 10;
-  var x = 20 , y = 20;
-  var dx = 2 , dy = 2;
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  var rBall = 10;
+  var xBall = 20 , yBall = 20;
+  var dxBall = 2 , dyBall = 2;
 
+  var objPlay = {
+    width :100,
+    height:20,
+    x: 200,
+    y:canvas.height - 20,
+    speed: 10
+  }
 
+  //handle obj play
+  document.addEventListener("keydown", (event)=>{
+    console.log("keydown");
+    console.log(event.keyCode);
+   
+    handleObjplay()
+
+  });
+  function handleObjplay(){
+    if(event.keyCode == 37){
+     objPlay.x -= objPlay.speed;
+     if( objPlay.x < 0){
+      objPlay.x =0;
+     } 
+   }else if(event.keyCode == 39){
+     objPlay.x += objPlay.speed;
+     if( objPlay.x > canvas.width - objPlay.width){
+      objPlay.x = canvas.width - objPlay.width;
+     }
+   }
+   
+  }
   // function vẽ bóng 
   function drawBall (){
     ctx.beginPath();
-    ctx.arc(x, y, r, 0, 2*Math.PI, true);
+    ctx.arc(xBall, yBall, rBall, 0, 2*Math.PI, true);
 
     ctx.fillStyle="red";
     ctx.strokeStyle="red";
@@ -29,17 +58,56 @@
     ctx.stroke();
     ctx.closePath()
   }
-  function handlBallRun() {
-      if(  x < r || x > cx ){
-        dx = -dx;
-      }
-      if(  y < r || y > cy ){
-        dy = -dy;
-      }
+//ve objplay vien gach duoi
+
+function drawObjPlay(){
+  ctx.beginPath();
+  ctx.rect( objPlay.x , objPlay.y , objPlay.width, objPlay.height );
+  
+  ctx.fillStyle ="red";
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+}
+
+//ve gach
+// 2*offset + 5*w + 4*margin = 500
+//offset = marginLeft = 20 ; marginTop=30
+//width = 60 height =10
+//row = 3 
+// col = 4
+
+function drawBricks(){
+  for(var i = 0 ; i<3 ; i++){
+    for(var j=0; j<4 ; j++){
+      ctx.beginPath();
+      ctx.rect(
+          20 + j*(80 + 40) ,
+          20 + i*(20 + 30),
+          80,
+          10,
+      );      
+      
+      ctx.fillStyle="red";
+      ctx.strokeStyle="red";
+      ctx.fill()
+      ctx.closePath();
     }
-    function updatePosition() {
-      x += dx;
-      y += dy;
+  }
+}
+
+  function handleBall() {
+    var cxBall = canvas.width - rBall;
+    var cyBall = canvas.height - rBall;
+      if(  xBall < rBall || xBall > cxBall ){
+        dxBall = -dxBall;
+      }
+      if(  yBall < rBall || yBall > cyBall ){
+        dyBall = -dyBall;
+      }
+    
+      xBall += dxBall;
+      yBall += dyBall;
     }
 //function bóng chuyển động theo thời gian
   // setInterval(() => {
@@ -55,16 +123,16 @@
   // } , 100);
 
   //cach 2 dùng requestAnimationFrame()
-    var cx = c.width - r;
-    var cy = c.height - r;
+   
     function draw(){
-      ctx.clearRect(0, 0 , c.width, c.height);
+      ctx.clearRect(0, 0 , canvas.width, canvas.height);
 
       drawBall();
+      drawObjPlay();
+      drawBricks();
+      handleBall();
 
-      handlBallRun();
-
-      updatePosition();
+    
 
       requestAnimationFrame(draw );
     }
